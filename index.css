@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+:root {
+  --red-color: rgb(220, 69, 69);
+  --green-color: rgb(36, 192, 36);
+  --blue-check: rgb(79, 151, 218);
+  --gray-color: rgb(235, 233, 233);
+  --gray-border: rgb(118, 118, 118);
+}
+header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+main,
+header {
+  margin: 30px;
+}
+main {
+  display: flex;
+
+  border-top: solid 2px var(--gray-color);
+}
+section {
+  border-left: solid 2px var(--gray-color);
+  padding-top: 20px;
+  flex-grow: 1;
+}
+.left-column {
+  flex-basis: 10%;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.left-column span:last-of-type {
+  margin-top: auto;
+}
+.middle-column {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.right-column {
+  padding-left: 20px;
+}
+@media (max-width: 700px) {
+  .left-column {
+    display: none;
+  }
+  .middle-column,
+  .right-column {
+    padding: 0;
+  }
+  #wrap {
+    flex-wrap: wrap;
+  }
+  .payment-check {
+    flex-wrap: wrap;
+  }
+}
+header h2 {
+  margin-right: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+header .span-pointer {
+  outline: 1px solid black;
+  padding: 6px;
+}
+header .span-pointer:hover {
+  cursor: pointer;
+  background-color: var(--gray-color);
+}
+header .span-pointer.notification {
+  position: relative;
+  background-color: var(--gray-color);
+}
+.span-pointer.notification::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 10px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--red-color);
+}
+header h2 span {
+  color: var(--red-color);
+}
+/*********** Formulary stuff***********/
+.payment-check {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px;
+  border: solid 1.5px var(--gray-border);
+}
+.payment-check span {
+  color: var(--green-color);
+}
+.payment-check .four {
+  background-color: var(--gray-color);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+}
+.credit-cards {
+  display: flex;
+  gap: 12px;
+}
+.credit-cards div {
+  flex: 1;
+  border: solid 1px var(--gray-border);
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
+}
+
+/* I tried to change the border 
+color of it container,but it doesn't works*/
+.credit-cards div input:checked .credit-cards > div {
+  border-color: var(--blue-check);
+}
+label {
+  width: 100%;
+}
+.exp-cvc {
+  display: flex;
+  gap: 10px;
+}
+.exp-cvc div,
+.exp-cvc input {
+  width: 100%;
+}
+input {
+  border: solid 1px var(--gray-border);
+  padding: 7px;
+}
+input:focus {
+  outline-color: var(--blue-check);
+}
+button {
+  padding: 7px;
+}
+form input,
+form h4,
+.payment-check,
+.credit-cards {
+  margin-bottom: 25px;
+}
+.credit-cards input {
+  margin-bottom: 0;
+}
+form button {
+  padding: 12px;
+}
+form .back-continue {
+  display: flex;
+  gap: 10px;
+}
+form .back-continue button:last-of-type {
+  flex: 1;
+  background-color: rgb(28, 27, 39);
+  color: white;
+}
+/*************Cart shopping**********/
+.title-order {
+  display: flex;
+  gap: 10px;
+}
+.product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gray-color);
+  padding: 10px;
+  margin-top: 16px;
+}
+.product .content div {
+  display: flex;
+  gap: 16px;
+  border-top: 1.5px solid rgb(192, 190, 190);
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+.product .content > p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.product p,
+.last-prices p,
+.title-order p {
+  color: rgb(97, 95, 95);
+}
+.image {
+  width: 150px;
+  cursor: pointer;
+}
+.coupon-header {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+/*************Button inside input****************/
+.coupon-code {
+  display: flex;
+  border: 1px solid gray;
+  padding: 3px;
+}
+.coupon-code input {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+.coupon-code button {
+  background-color: var(--blue-check);
+  border: none;
+  color: white;
+  flex-basis: 12%;
+}
+.coupon-code button:focus {
+  outline: 1px solid black;
+  background-color: rgb(82, 138, 191);
+}
+/************Total prices at the end***********/
+.last-prices div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.last-prices .line-through {
+  border-top: 1.5px solid rgb(192, 190, 190);
+  padding-top: 16px;
+}
+.full-lenght {
+  width: 100%;
+}
