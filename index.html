@@ -59,32 +59,50 @@
           </div>
           <h4>Card Details</h4>
           <div>
-            <p>Email</p>
+            <label for="email"><p>Email</p></label>
             <input
               type="email"
               placeholder="AnnaLizz@gmail.com"
               required
               class="full-lenght"
+              id="email"
             />
 
-            <p>Card Number</p>
+            <label for="card-number"><p>Card Number</p></label>
             <input
               type="number"
               placeholder="2356 8907 9854 8723"
               class="full-lenght"
+              id="card-number"
             />
 
-            <p>Card Holder</p>
-            <input type="text" placeholder="Lizz Anna" class="full-lenght" />
+            <label for="card-holder"><p>Card Holder</p></label>
+            <input
+              type="text"
+              placeholder="Lizz Anna"
+              class="full-lenght"
+              id="card-holder"
+            />
           </div>
           <div class="exp-cvc">
             <div>
-              <p>Exp</p>
-              <input type="date" />
+              <label for="exp"><p>Exp</p></label>
+              <input
+                type="text"
+                pattern="([0-9]{2}[/]?){2}"
+                maxlength="5"
+                id="exp"
+              />
             </div>
             <div>
-              <p>CVC</p>
-              <input type="number" placeholder="2023209" maxlength="7" />
+              <label for="cvc"><p>CVC</p></label>
+
+              <input
+                type="number"
+                placeholder="2023209"
+                maxlength="7"
+                id="cvc"
+              />
             </div>
           </div>
           <div class="back-continue">
